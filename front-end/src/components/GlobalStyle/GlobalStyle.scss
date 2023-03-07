@@ -1,0 +1,102 @@
+@use "../../scss/index.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Questrial&display=swap");
+
+:root {
+  --font-family-default: Helvetica, Arial, sans-serif;
+  --font-family-segoe: "Poppins", sans-serif;
+  --shadow-2: rgba(0, 0, 0, 0.2);
+  --shadow-inset: rgba(255, 255, 255, 0.5);
+  --shadow-1: rgba(0, 0, 0, 0.1);
+  --secondary-text: #65676b;
+  --filter-secondary-icon: invert(39%) sepia(21%) saturate(200%)
+    saturate(109.5%) hue-rotate(174deg) brightness(94%) contrast(86%);
+  --card-box-shadow: 0 12px 28px 0 var(--shadow-2), 0 2px 4px 0 var(--shadow-1);
+  --filter-always-white: invert(100%);
+  --filter-placeholder-icon: invert(59%) sepia(11%) saturate(200%)
+    saturate(135%) hue-rotate(176deg) brightness(96%) contrast(94%);
+  --card-height: 60px;
+  --white: white;
+  --button-height: 36px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family-segoe);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  overflow-y: auto;
+}
+
+button,
+input,
+[tabindex] {
+  border: none;
+  outline: none;
+  font-family: var(--font-family-segoe);
+  &::placeholder {
+    font-family: var(--font-family-segoe);
+  }
+}
+
+a[href] {
+  text-decoration: none;
+  color: #161823;
+}
+
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+  height: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.navbarItem {
+  @include flex(center, center);
+  height: 100%;
+  width: 112px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 8px;
+  @include transition(0.15s);
+  color: $gray;
+
+  &.active {
+    color: $primary-button-background;
+    position: relative;
+    &:hover {
+      background-color: unset;
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -3px;
+      width: 100%;
+      height: 3px;
+      background-color: $primary-button-background;
+    }
+  }
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+  }
+}
+

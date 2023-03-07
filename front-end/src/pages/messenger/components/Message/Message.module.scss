@@ -1,0 +1,38 @@
+@use "../../../../scss/index.scss" as *;
+
+.message {
+  @include flex(flex-start, flex-start);
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.messageTop {
+  @include flex(center, center);
+}
+
+.messageImg {
+  @include img(32px, 32px);
+  margin-right: 10px;
+}
+
+.messageText {
+  max-width: 300px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 14px;
+  background-color: $blue;
+  color: $white;
+}
+
+.messageBottom {
+  font-size: 12px;
+}
+
+.message.own {
+  align-items: flex-end;
+}
+
+.message.own .messageText {
+  background-color: rgb(245, 241, 241);
+  color: black;
+}

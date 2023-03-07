@@ -1,0 +1,43 @@
+@use "../../../../scss/index.scss" as *;
+
+.conversation {
+  @include flex(center, flex-start);
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  &:hover {
+    background-color: $wash;
+  }
+  &.currentChat {
+    background-color: $indigo;
+  }
+}
+
+.conversationImg {
+  @include flex(center, center);
+  @include rel;
+  margin-right: 16px;
+  img {
+    @include img(42px, 42px);
+  }
+  .isActive {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid $white;
+    @include abs;
+    bottom: 4px;
+    right: 0;
+    background-color: $teal;
+  }
+}
+
+.conversationName {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .conversationName {
+    display: none;
+  }
+}

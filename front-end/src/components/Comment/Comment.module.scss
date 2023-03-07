@@ -1,0 +1,71 @@
+@use "../../scss/index.scss" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  overflow: overlay;
+  height: calc(100vh - 60px);
+  position: relative;
+}
+.container {
+  overflow-y: scroll;
+  overflow: overlay;
+  border-top: 1px solid $black-alpha-15;
+  border-bottom: 1px solid $black-alpha-15;
+  .comments {
+    padding: 0px 16px 16px;
+  }
+}
+
+.bottom {
+  display: flex;
+  padding: 8px 16px;
+  .avatar {
+    position: relative;
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .arrowIcon {
+      position: absolute;
+      bottom: 8px;
+      right: 0px;
+      background-color: #e4e6eb;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      @include flex(center, center);
+    }
+  }
+  .input {
+    position: relative;
+    flex: 1;
+    height: 36px;
+    margin-left: 8px;
+    input {
+      padding: 8px 20px 8px 12px;
+      width: 100%;
+      border-radius: 20px;
+      height: 100%;
+      font-size: 16px;
+      &::placeholder {
+        color: var(--secondary-text);
+        font-size: 14px;
+      }
+      background-color: $wash;
+    }
+  }
+  .sendIcon {
+    position: absolute;
+    @include flex(center, center);
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $gray;
+    padding: 10px;
+  }
+}

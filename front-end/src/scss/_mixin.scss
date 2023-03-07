@@ -1,0 +1,57 @@
+@use "./variables" as *;
+
+@mixin flex($alignItems, $justifyContent) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}
+
+@mixin overlay {
+  background-color: rgba($color: $white-1, $alpha: 0.5);
+}
+
+@mixin border($color) {
+  transition: border 0.15s ease;
+  border: 1px solid $color;
+}
+@mixin transition($time) {
+  transition: all $time ease;
+}
+@mixin animate($animation, $duration, $method, $times) {
+  animation: $animation $duration $method $times;
+}
+
+@mixin borderBottom {
+  border-bottom: 1px solid $black-alpha-10;
+}
+
+@mixin round-border {
+  border-radius: 50%;
+}
+
+@mixin rel {
+  position: relative;
+}
+
+@mixin abs {
+  position: absolute;
+}
+@mixin img($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@mixin fz-14 {
+  font-size: 14px;
+}
+@mixin fz-16 {
+  font-size: 16px;
+}
+@mixin fz-18 {
+  font-size: 18px;
+}
+@mixin fz-20 {
+  font-size: 20px;
+}

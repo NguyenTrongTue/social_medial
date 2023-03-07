@@ -1,0 +1,178 @@
+@use "../../scss/index.scss" as *;
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  position: relative;
+}
+.avatar {
+  margin-top: 2px;
+  img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  .messageContainer {
+    align-items: center;
+    display: flex;
+    margin-left: 8px;
+    position: relative;
+    .content {
+      min-width: 150px;
+      background-color: $wash;
+      color: $primary-text-color;
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      border-radius: 16px;
+      padding: 8px;
+      .username {
+        font-weight: 600;
+        font-size: 13px;
+      }
+      .text {
+        font-size: 15px;
+      }
+    }
+  }
+  .react {
+    @include flex(center, flex-start);
+    font-size: 12px;
+    margin-top: 2px;
+    .like,
+    .reply {
+      margin: 0 8px;
+      font-weight: 600;
+      color: $gray;
+      cursor: pointer;
+      padding: 2px 4px;
+      border-radius: 8px;
+      &:hover {
+        background-color: $wash;
+      }
+
+    }
+    .isLike {
+      color: $blue;
+    }
+
+    .time {
+      margin: 0 8px;
+    }
+  }
+  .option {
+    @include flex(center, center);
+    color: $gray;
+    margin-left: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    &:hover {
+      background-color: $black-alpha-10;
+    }
+  }
+}
+.tippyBox {
+  position: relative;
+  width: 320px;
+  box-shadow: var(--card-box-shadow);
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 8px;
+  z-index: 9;
+  background-color: $white;
+  box-shadow: var(--card-box-shadow);
+
+  span {
+    padding: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    @include transition(0.12s);
+    &:hover {
+      background-color: $black-alpha-10;
+      border-radius: 8px;
+    }
+  }
+  .arrow {
+    color: white;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translate(-40%, 100%);
+  }
+}
+
+.bottom {
+  display: flex;
+  .avatar {
+    position: relative;
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .arrowIcon {
+      position: absolute;
+      bottom: 8px;
+      right: 0px;
+      background-color: #e4e6eb;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      @include flex(center, center);
+    }
+  }
+  .input {
+    position: relative;
+    flex: 1;
+    height: 36px;
+    margin-left: 8px;
+    input {
+      padding: 8px 20px 8px 12px;
+      width: 100%;
+      border-radius: 20px;
+      height: 100%;
+      font-size: 16px;
+      font-family: var();
+      &::placeholder {
+        color: var(--secondary-text);
+        font-size: 14px;
+      }
+      background-color: $wash;
+    }
+  }
+  .sendIcon {
+    position: absolute;
+    @include flex(center, center);
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $gray;
+    padding: 10px;
+  }
+}
+.cancel {
+  color: $blue;
+  font-size: 10px;
+  font-weight: 600;
+  margin-left: 50px;
+  width: fit-content;
+  cursor: pointer;
+  @include transition(0.12s);
+  &:hover {
+    border-bottom: 1px solid $blue;
+  }
+}

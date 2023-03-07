@@ -1,0 +1,76 @@
+@use "../../../../scss/index.scss" as *;
+
+.wrapper {
+  width: 360px;
+  border-right: 1px solid $black-alpha-15;
+}
+.headerWrapper {
+  border-bottom: 1px solid $black-alpha-15;
+  padding: 0 16px;
+  .header {
+    @include flex(center, space-between);
+    height: 60px;
+    .title {
+      font-size: 22px;
+      color: $primary-text-color;
+      font-weight: 700;
+    }
+    .options {
+      @include flex(center, flex-start);
+      .optionItem {
+        @include flex(center, center);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: $black-alpha-15;
+        margin: 0 6px;
+        cursor: pointer;
+      }
+    }
+  }
+  .search {
+    .searchInput {
+      @include rel;
+      .searchIcon {
+        @include abs;
+        color: $gray;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+      }
+      input {
+        width: 100%;
+        padding: 8px 10px 8px 36px;
+        background-color: $wash;
+        font-size: 14px;
+        border-radius: 20px;
+      }
+    }
+    .tags {
+      @include flex(center, flex-start);
+      font-size: 14px;
+      font-weight: 600;
+
+      margin: 8px 0px;
+      .tagItem {
+        padding: 8px 10px;
+        margin: 0 4px;
+        cursor: pointer;
+        border-radius: 20px;
+        &:hover {
+          background-color: $wash;
+        }
+        &.active {
+          color: $blue;
+          background-color: $indigo;
+        }
+      }
+    }
+  }
+}
+
+.chatMenuWrapper {
+  overflow-y: scroll;
+  position: sticky;
+  padding: 10px;
+}

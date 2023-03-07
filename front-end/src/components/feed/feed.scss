@@ -1,0 +1,16 @@
+@use "../../scss/index.scss" as *;
+
+.feed {
+  width: 600px;
+  margin: 20px;
+  @include tablet {
+    width: 680px;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+  @include mobile {
+    width: calc(100% - 32px);
+    padding: 0 16px;
+  }
+}

@@ -1,0 +1,178 @@
+@use "../../scss/index.scss" as *;
+
+.warraper {
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  padding: 12px 16px 10px;
+  background-color: $white;
+}
+
+.shareTop {
+  @include flex(center, flex-start);
+}
+
+.img {
+  width: $img-width;
+  height: $img-width;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  @include flex(center, center);
+}
+
+.shareInput {
+  padding: 8px 12px;
+  background-color: $black-alpha-05;
+  width: 100%;
+  font-size: 1em;
+  border-radius: 20px;
+  height: 40px;
+  cursor: pointer;
+  &:hover {
+    background-color: $black-alpha-10;
+  }
+}
+
+.shareHr {
+  margin: 12px 0;
+  width: 100%;
+  background-color: $black-alpha-10;
+}
+
+.shareBottom {
+  @include flex(center, space-between);
+  margin-top: 16px;
+}
+
+.shareOption {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  cursor: pointer;
+  height: 40px;
+  padding: 8px;
+}
+
+.shareOptionText {
+  font-size: 15px;
+  font-weight: 600;
+  color: $gray;
+  margin-left: 8px;
+}
+.shareModal {
+  width: 500px;
+  max-height: calc(100vh - 130px);
+  overflow: hidden;
+  @include mobile {
+    width: calc(100vw - 32px);
+  }
+}
+
+.container {
+  padding: 16px;
+  .user {
+    @include flex(center, flex-start);
+    margin-bottom: 16px;
+    .img {
+      width: $img-width;
+      height: $img-width;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .userName {
+      font-weight: 600;
+      font-size: 15px;
+      color: $primary-text-color;
+    }
+  }
+  .modalCenter {
+    overflow-y: scroll;
+    max-height: 230px;
+    .imgPost {
+      position: relative;
+      width: 450px;
+      height: 310px;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid $black-alpha-10;
+      video {
+        position: relative;
+        top: -30px;
+      }
+      .clearFile {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background-color: $white;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        @include flex(center, center);
+        cursor: pointer;
+        border: 1px solid $black-alpha-10;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+  }
+  .shareText {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-top: 16px;
+    height: 100px;
+    font-size: 15px;
+    font-family: var(--font-family-segoe);
+    &::placeholder {
+      font-size: 16px;
+    }
+  }
+}
+
+.shareOptionModal {
+  padding: 16px;
+  @include flex(center, space-between);
+  border: 1px solid $black-alpha-10;
+  border-radius: 8px;
+  height: 58px;
+  margin-top: 16px;
+}
+.desc {
+  font-size: 15px;
+  font-weight: 600;
+  @include mobile {
+    display: none;
+  }
+}
+.iconModal {
+  .icon {
+    margin: 0 8px;
+    width: 24px;
+    height: 24px;
+  }
+  @include mobile {
+    margin: auto;
+  }
+}
+.post {
+  height: 36px;
+  text-align: center;
+  background-color: $primary-button-background;
+  color: $white;
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  &.disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+}

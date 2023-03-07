@@ -1,0 +1,177 @@
+@use "../../../../scss/index" as *;
+
+.leftContainer {
+  background-color: $white-1;
+  width: 360px;
+  margin-bottom: 16px;
+  position: sticky;
+  top: 56px;
+  height: calc(100vh - 72px);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  overflow-y: scroll;
+  @include tablet {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    top: 0;
+    margin-bottom: 20px;
+  }
+  @include mobile {
+    width: 100%;
+    position: relative;
+  }
+  .card {
+    padding: 16px;
+    background-color: $white;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: var(--card-box-shadow);
+
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .photo {
+      margin: 0;
+    }
+  }
+
+  .editBtn {
+    height: 36px;
+    font-size: 15px;
+    @include flex(center, center);
+    font-weight: 500;
+    background-color: $secondary-button-background;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    &:hover {
+      background-color: $black-alpha-15;
+    }
+  }
+
+  .cardTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: $primary-text-color;
+    @include borderBottom;
+  }
+
+  .introItem {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    color: $primary-text-color;
+    margin: 4px 0;
+    p {
+      span {
+        font-weight: 600;
+      }
+    }
+    img {
+      -webkit-filter: var(--filter-placeholder-icon);
+      margin-right: 16px;
+    }
+  }
+  .cardContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 8px;
+  }
+}
+.modal {
+  width: 700px;
+  background-color: var(--white);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: var(--card-box-shadow);
+}
+.modalContainer {
+  padding: 16px;
+}
+.modalItem {
+}
+.modalItemTitle {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 8px 0;
+}
+.modalItemContent {
+  @include flex(center, flex-start);
+  height: 30px;
+  .modalIcon {
+    margin-right: 12px;
+    -webkit-filter: var(--filter-placeholder-icon);
+  }
+  .editIcon {
+    cursor: pointer;
+  }
+  .modalText {
+    flex: 1;
+    @include flex(center, flex-start);
+    font-size: 14px;
+
+    span {
+      margin-top: 1px;
+  
+    }
+    .relationship {
+      margin-left: 8px;
+      option {
+        font-size: 14px;
+      }
+      select {
+        font-size: 14px;
+        height: 25px;
+        outline: none;
+        font-weight: 600;
+        background-color: $black-alpha-05;
+        color: $primary-text-color;
+      }
+    }
+  }
+  input {
+    font-size: 15px;
+    font-weight: 500;
+    flex: 1;
+    margin: 0 8px;
+    padding-left: 2px;
+    border: 1px solid transparent;
+
+    &:focus {
+      border: 1px solid $blue;
+    }
+  }
+}
+.modalBottom {
+  @include flex(center, flex-end);
+  padding: 16px;
+  .modalCancelBtn,
+  .modalUpdateBtn {
+    padding: 8px;
+    border-radius: 8px;
+    margin: 0 4px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    height: var(--button-height);
+  }
+  .modalCancelBtn {
+    background-color: $secondary-button-background;
+  }
+  .modalUpdateBtn {
+    background-color: $primary-button-background;
+    color: white;
+    width: 80px;
+    text-align: center;
+  }
+}

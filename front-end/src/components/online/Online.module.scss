@@ -1,0 +1,41 @@
+@use "../../scss/index.scss" as *;
+
+.rightbarFriend {
+  @include flex(center, flex-start);
+  cursor: pointer;
+  border-radius: 8px;
+  height: 48px;
+  padding: 8px;
+  &:hover {
+    background-color: $black-alpha-05;
+  }
+}
+
+.rightbarProfileImgContainer {
+  margin-right: 10px;
+  position: relative;
+  @include flex(center, center);
+}
+
+.rightbarProfileImg {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.rightbarOnline {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: limegreen;
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+  border: 1px solid $white;
+}
+
+.rightbarUsername {
+  font-weight: 600;
+  font-size: 15px;
+}

@@ -1,0 +1,104 @@
+@use "../../scss/index.scss" as *;
+
+.messenger {
+  height: calc(100vh - 70px);
+  display: flex;
+}
+.chatBox {
+  flex: 1;
+}
+
+.header {
+  @include flex(center, space-between);
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 2px 2px rgba($color: #000, $alpha: 0.12);
+  padding: 10px;
+  .rightHeader {
+    @include flex(center, flex-start);
+    .chatImg {
+      position: relative;
+      @include flex(center, center);
+      position: abs;
+      margin-right: 16px;
+      img {
+        @include img(42px, 42px);
+      }
+      .isActive {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1px solid $white;
+        position: absolute;
+        bottom: 4px;
+        right: 0;
+        background-color: $teal;
+      }
+    }
+
+    .userName {
+      font-weight: 500;
+    }
+  }
+  .leftHeader {
+    @include flex(center, flex-start);
+    .featureItem {
+      @include flex(center, center);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      margin: 0 8px;
+      cursor: pointer;
+      &:hover {
+        background-color: $black-alpha-10;
+      }
+    }
+  }
+}
+
+.chatBoxWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include rel;
+  height: 100%;
+}
+
+.chatBoxTop {
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 10px;
+  padding: 16px;
+}
+
+.chatBoxBottom {
+  @include flex(center, space-between);
+  height: 60px;
+  box-shadow: 0 -2px 1px rgba($color: #000, $alpha: 0.12);
+  padding: 8px 16px;
+  position: relative;
+  .chatMessageInput {
+    width: 100%;
+    padding: 10px;
+    background-color: $wash;
+    font-size: 14px;
+    border-radius: 20px;
+    padding-right: 30px;
+  }
+
+  .chatSubmitButton {
+    position: absolute;
+    @include flex(center, center);
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}
+.noConversationText {
+  position: absolute;
+  top: 10%;
+  font-size: 50px;
+  color: rgb(224, 220, 220);
+  cursor: default;
+}

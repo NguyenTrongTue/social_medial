@@ -1,0 +1,11 @@
+@use "../../scss/index.scss" as *;
+.sidebarFriend {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 4px;
+}

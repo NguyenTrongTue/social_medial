@@ -1,0 +1,45 @@
+@use "../../scss/index.scss" as *;
+
+.modal {
+  @include flex(center, center);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  z-index: 99;
+  @include overlay;
+  &__header {
+    @include flex(center, center);
+    position: relative;
+    height: 60px;
+    padding: 16px;
+    font-weight: 600;
+    font-size: 20px;
+    border-bottom: 1px solid $black-alpha-10;
+  }
+  &__close {
+    @include flex(center, center);
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: $black-alpha-10;
+    cursor: pointer;
+    z-index: 3;
+  }
+  &__content {
+    position: relative;
+    background-color: $white;
+    box-shadow: 0 12px 28px 0 var(--shadow-2), 0 2px 4px 0 var(--shadow-1),
+      inset 0 0 0 1px var(--shadow-inset);
+    border-radius: 8px;
+    @include mobile {
+      width: calc(100vw - 32px);
+      margin: 0 16px;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+@use "../../scss/index.scss" as *;
+
+.wrapper {
+  height: $header-height;
+  width: 100vw;
+  background-color: $white;
+  @include flex(center, space-between);
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.06);
+}
+.left {
+  @include flex(center, flex-start);
+  width: 320px;
+  background-color: $white;
+  padding: 8px 16px 8px 8px;
+  transition: all 0.2s ease;
+  &.openSearch {
+    z-index: 9999;
+    box-shadow: 0 12px 12px var(--shadow-2), inset 0 0 0 0 var(--shadow-inset);
+    border-radius: 0 0 8px 8px;
+    height: 200px;
+  }
+  .back {
+    @include flex(center, center);
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    &:hover {
+      background-color: $white-1;
+    }
+    .backIcon {
+      width: 22px;
+      height: 22px;
+      color: $gray;
+    }
+  }
+}
+
+.logo {
+  width: $img-width;
+  height: $img-width;
+  margin-left: 8px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.searchbar {
+  @include flex(center, flex-start);
+  flex: 1;
+  height: $img-width;
+  border-radius: 30px;
+  background-color: $white-1;
+  margin-left: 8px;
+  transition: all 0.2s ease;
+}
+
+.searchIcon {
+  font-size: 24px !important;
+  margin-left: 10px;
+  margin-right: 8px;
+  color: $gray !important;
+}
+
+.searchInput {
+  background-color: $white-1;
+  color: #050505;
+  border: none;
+  font-size: 15px;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.openSearch {
+  .searchIcon {
+    display: none;
+  }
+  .searchInput {
+    padding: 0 16px;
+  }
+}
+
+.center {
+  @include flex(center, flex-start);
+  height: 100%;
+  padding: 3px 0;
+  margin-right: 7em;
+}
+
+.right {
+  padding-right: 16px;
+  @include flex(center, space-around);
+  color: $white;
+}
+
+.topbarIcon {
+  position: relative;
+  width: $img-width;
+  height: $img-width;
+  background-color: #e4e6eb;
+  margin: 0px 4px;
+  @include flex(center, center);
+  border-radius: 50%;
+  .badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    @include flex(center, center);
+    background-color: $red;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    text-align: center;
+    color: $white;
+    font-size: 12px;
+  }
+}
+
+.topbarImg {
+  width: $img-width;
+  height: $img-width;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  margin-left: 4px;
+}

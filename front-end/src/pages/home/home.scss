@@ -1,0 +1,8 @@
+@use "../../scss/index.scss" as *;
+
+.homeContainer {
+  @include flex(flex-start, space-between);
+  width: 100%;
+  background-color: $white-1;
+  position: relative;
+}
